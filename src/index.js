@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter,Link}from 'react-router-dom'
+import {BrowserRouter,Link}from 'react-router-dom';
+import {observable} from 'mobx';
+
 // import App from './example'
 
 ReactDOM.render(

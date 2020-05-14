@@ -101,55 +101,22 @@
 import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home';
-import {observable,isArrayLike,computed} from 'mobx';
-
-//
-// const arr = observable(['a','b','c']);
-// console.log(arr,Array.isArray(arr),isArrayLike(arr));
-// console.log(arr[0],arr[1]);
-//
-// const obj = observable({a: 1,b:1});
-// console.log(obj);
-// console.log(obj.a,obj.b);
-//
-// const map = observable(new Map());
-// map.set('a',1);
-// console.log(map.has('a'));
-// map.delete('a');
-// console.log(map.has('a'));
-
-// var num = observable.box(20);
-// var str = observable.box('hello');
-// var bool = observable.box(true);
-// num.set(50);
-// str.set('world');
-// bool.set(false);
-// console.log(num.get(),str.get(),bool.get());
-
-class Store{
-    @observable array = [];
-    @observable obj = {};
-    @observable map = new Map();
-
-    @observable string = 'hello';
-    @observable number = 20;
-    @observable bool = 'false';
-}
-
-let store = new Store();
-let foo = computed((function () {
-    return store.string + '/'+store.number;
-}));
-console.log(foo.get())
-;
 
 function App(props) {
-
+    // let [val,setVal] = useState({
+    //     vala:0,
+    //     valb:1,
+    //     valc:2
+    // });
+    let[vala,setVala] = useState(0);
+    let[valb,setValb] = useState(1);
+    let[valc,setValc] = useState(2);
     return(
         <div className="App">
-            hello
-            <Home/>
+            使用数据: {vala}----{valb}---{valc}
+            {/*<button onClick={()=>{setVal(val.vala+1)}}>*/}
+                {/*点我进行数据的修改*/}
+            {/*</button>*/}
         </div>
     );
 }
